@@ -1,5 +1,10 @@
 ## ChangeLog - Most recent changes at the top
 
+Version 2.104 - North Industries MyDU bundled atlas (fork)
+- Ship server planet data as `archhud/custom/mydu_atlas.lua`; no global `atlas.lua` patch required for MyDU ArchHUD.
+- Build outputs: `MyDU-ArchHUD.zip`, `MyDU-ArchHUD.conf`, `MyDU-ArchHUD-GFN.conf` (atlas inlined in conf).
+- See [INSTALL-MYDU.md](INSTALL-MYDU.md).
+
 Version 2.013 - Minor bug fixes
 - Fixed 100k/hr up speed limit in atmo, now limited to adjusted atmo speed limit.
 

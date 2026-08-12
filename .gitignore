@@ -3,6 +3,12 @@ ArchHUD.wrapped.conf
 ArchHUD.exports
 ArchHUD.extracted.lua
 ArchHUD.conf.version
+MyDU-ArchHUD.conf
+MyDU-ArchHUD.conf.version
+MyDU-ArchHUD-GFN.conf
+MyDU-ArchHUD.zip
+build/
+deploy/
 scripts/node_modules/**
 scripts/work/**
 src/du

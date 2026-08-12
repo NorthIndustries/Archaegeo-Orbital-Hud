@@ -1,7 +1,7 @@
 require 'src.slots'
 
 Nav = Navigator.new(system, core, unit)
-local atlas = require("atlas")
+local atlas = require("autoconf/custom/archhud/custom/mydu_atlas")
 --
 function p(msg)
     system.print(system.getArkTime()..": "..msg)
@@ -160,7 +160,7 @@ end
 
 script = {}  -- wrappable container for all the code. Different than normal DU Lua in that things are not seperated out.
 
-VERSION_NUMBER = 2.103
+VERSION_NUMBER = 2.104
 
 
 -- DU Events written for wrap and minimization. Written by Dimencia and Archaegeo. Optimization and Automation of scripting by ChronosWS  Linked sources where appropriate, most have been modified.

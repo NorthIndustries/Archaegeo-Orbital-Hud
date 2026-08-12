@@ -3,6 +3,12 @@
 # Arch-Orbital-HUD
 ## A general purpose HUD for Dual Universe, based on DU Orbital Hud 5.450 and earlier
 
+### North Industries MyDU fork
+
+This fork ([NorthIndustries/Archaegeo-Orbital-Hud](https://github.com/NorthIndustries/Archaegeo-Orbital-Hud)) bundles **MyDU server planet data** with the HUD. Install **[INSTALL-MYDU.md](INSTALL-MYDU.md)** — players do not replace global `atlas.lua` for MyDU ArchHUD.
+
+Build: `./scripts/build-mydu.sh` (requires `lua5.3`, `npm`, `zip`, `python3`).
+
 ### NOTE: Version 1.7XX+ is a modular version that uses require files and will not work on GeForce Now. Use version ArchHUDGFN.conf for GEForce Now.
 
 ###### For assistance, see the OSIN discord channel [Discord](https://discord.gg/9RD3xQfYXG) or my personal [Discord](https://discord.gg/CNRE45xRu7)

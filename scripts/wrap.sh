@@ -15,11 +15,23 @@ if ! which $LUAMIN 1> /dev/null; then
     echo "ERROR: Need luamin in PATH (run \`npm install\` from the scripts/ folder)"; exit 1
 fi
 
+LUA_BIN=""
+for candidate in lua5.3 lua lua5.4; do
+    if command -v "$candidate" 1> /dev/null; then
+        LUA_BIN="$candidate"
+        break
+    fi
+done
+if [[ -z "$LUA_BIN" ]]; then
+    echo "ERROR: Need lua5.3 (or lua) in PATH to run wrap.lua"; exit 1
+fi
+
 # Parse args, or use defaults
 MINIFY="${1:-false}"
 # We expect this file to be run from the <repo>/scripts directory
 LUA_SRC=${2:-$ROOTDIR/src/ArchHUD.lua}
-CONF_DST=${3:-$ROOTDIR/ArchHUD.conf}
+CONF_DST=${3:-$ROOTDIR/MyDU-ArchHUD.conf}
+HUD_DISPLAY_NAME=${HUD_DISPLAY_NAME:-"MyDU ArchHUD"}
 
 # Make a fresh work dir
 WORK_DIR=${ROOTDIR}/scripts/work
@@ -68,8 +80,8 @@ SLOTS=(
 )
 
 echo "Wrapping ..."
-lua ${ROOTDIR}/scripts/wrap.lua --handle-errors-min --output yaml \
-             --name "ArchHud - Archaegeo v$VERSION_NUMBER (Minified)" \
+$LUA_BIN ${ROOTDIR}/scripts/wrap.lua --handle-errors-min --output yaml \
+             --name "${HUD_DISPLAY_NAME} v$VERSION_NUMBER (Minified)" \
              $WORK_DIR/ArchHUD.min.lua $WORK_DIR/ArchHUD.wrapped.conf \
              --slots ${SLOTS[*]}
 
@@ -83,7 +95,7 @@ fi
 # Fix up minified L_TEXTs which requires a space after the comma
 sed -i -E 's/L_TEXT\(("[^"]*"),("[^"]*")\)/L_TEXT(\1, \2)/g' $CONF_DST
 
-echo "$VERSION_NUMBER" > ${ROOTDIR}/ArchHUD.conf.version
+echo "$VERSION_NUMBER" > ${ROOTDIR}/MyDU-ArchHUD.conf.version
 
 echo "Compiled v$VERSION_NUMBER at ${CONF_DST}"
 

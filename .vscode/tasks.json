@@ -4,6 +4,19 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build MyDU ArchHUD",
+            "type": "shell",
+            "group": "build",
+            "command": "./build-mydu.sh",
+            "args": [
+                "false"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/scripts"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Wrap and Deploy",
             "type": "shell",
             "group": "build",
