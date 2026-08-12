@@ -23,5 +23,5 @@ Rezoix and his HUD - https://github.com/Rezoix/DU-hud
 JayleBreak and his orbital maths/atlas - https://gitlab.com/JayleBreak/dualuniverse/-/tree/master/DUflightfiles/autoconf/custom
 
 Dimencia and all of his hard math work on the autopilot and other features.
-
+gg
 
